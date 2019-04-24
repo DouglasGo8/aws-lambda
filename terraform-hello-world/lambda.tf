@@ -99,6 +99,7 @@ resource "aws_lambda_permission" "apigtw" {
     function_name = "${aws_lambda_function.terraform.arn}"
     principal = "apigateway.amazonaws.com"
 
-    source_arn = "${aws_api_gateway_deployment.terraform.execution_arn}/*/*"  # The /*/* portion grants access from any method on any resource
-                                                                              # within the API Gateway "REST API".  
+    # The /*/* portion grants access from any method on any resource within the API Gateway "REST API".  
+    source_arn = "${aws_api_gateway_deployment.terraform.execution_arn}/*/*"  
+                                                                             
 }
