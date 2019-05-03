@@ -3,7 +3,7 @@
 
 
 provider "aws" {
-  region = "us-east-1"
+  region = "${var.aws_region}"
 }
 
 resource "aws_lambda_function" "terraform" { #terraform nao representa key word poderia ser terraform-hello-world
